@@ -1,0 +1,51 @@
+% -*- coding=utf-8 -*-
+% \chapter{附录}
+\addcontentsline{toc}{section}{附录}
+\begin{center}
+\heiti{\zihao{-3}{附录}}
+\end{center}
+\addtocontents{toc}{\vspace{\baselineskip}}  % 向目录添加一行空白
+
+\section*{一、处理碰撞事例的Python代码}
+\begin{lstlisting}[language={python}, basicstyle = \ttfamily,breaklines = true, caption={Python 源代码}, label=code_1]
+## 2023/1/19 version.
+import IPython.core.pylabtools as pyt 
+import numpy as np
+import matplotlib.pyplot as plt
+import math
+import time
+#Because this module structure is too long, use "as" to rename it for conveniently invoking.
+
+T1 = time.time()
+#read data from 'main_out.txt' into arrays.
+data =np.loadtxt("Jpsi_13TeV_1000.txt",dtype='str',delimiter='\t')
+#or delimiter='\s+'
+
+#Clear out the useless information and split the strings.
+data=np.delete(data,len(data)-1,0)
+data=[item.split() for item in data]
+JpsiData=[item for item in data if (item[0] == '443' or item[0] == '-443')]
+#extract physical quantities from data(its type is "list")
+KF=[JpsiData[i][0] for i in range(len(JpsiData))]
+KF = np.array(KF,dtype=float)
+px=[JpsiData[i][1] for i in range(len(JpsiData))]
+px = np.array(px,dtype=float)
+py=[JpsiData[i][2] for i in range(len(JpsiData))]
+py = np.array(py,dtype=float)
+pz=[JpsiData[i][3] for i in range(len(JpsiData))]
+pz = np.array(pz,dtype=float)
+E=[JpsiData[i][4] for i in range(len(JpsiData))]
+E = np.array(E,dtype=float)
+m=[JpsiData[i][5] for i in range(len(JpsiData))]
+m = np.array(m,dtype=float)
+floatdata=[KF,px,py,pz,E,m]
+JpsiData=np.transpose(floatdata)
+print(JpsiData)
+f=open('JpsiData_13TeV.txt','a+')
+for index in range(len(JpsiData)):
+    print(*JpsiData[index,:],file=f)
+f.close()
+
+T11 = time.time()
+print('数据处理时间:%s mins' % ((T11 - T1)*1.0/60))
+\end{lstlisting}

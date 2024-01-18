@@ -1,0 +1,58 @@
+% -*- coding=utf-8 -*-
+%\newcommand\clcNumber{O175.3}                        % 分类号
+\newcommand\thesisTitle{你的标题你的标题你的标题你的标题你的标题你的标题你的标题}    % 题目
+\newcommand\thesisAuthor{你的名字}                       % 作者
+\newcommand\department{你的院系}                    % 院系
+\newcommand\major{你的专业}                         % 专业
+\newcommand\grade{2020级}                             % 年级
+\newcommand\studentId{2020000000}                     % 学号
+\newcommand\supervisor{你的指导老师}                         % 指导教师
+\newcommand\thesisScore{}                             % 评定成绩（默认为空）
+\newcommand\thesisDate{2023年1月1日}                   % 提交日期
+
+%============================================如非必要，以下内容请勿动==============================================
+%============================================如非必要，以下内容请勿动==============================================
+%============================================如非必要，以下内容请勿动==============================================
+{   
+    \songti                                                                  % 设置封面主要字体为宋体
+    \setlength\parindent{0em}                                               % 设置首行缩进为0
+    \ThisTileWallPaper{\paperwidth}{\paperheight}{figure/cover.pdf}         % 设置封面背景
+    \vspace*{0.2cm}                                                         % 设置页面内容上间距
+    \vspace*{8cm}
+    \renewcommand{\baselinestretch}{2}\selectfont                           % 设置声明的行间距
+    {
+        \begin{center}
+            % 短标题
+            % {\zihao{4}  论文题目：}
+            % \underline{\makebox[11.5em][c]{\zihao{4}\songti\thesisTitle}} \par
+            % 如果标题太长，使用下面的方式
+            {\zihao{4}  论文题目：}
+            \underline{\makebox[11.5em][c]{\zihao{4}\songti 你的标题你的标题你的标}} \par
+            \underline{\makebox[18em][c]{\zihao{4}\songti 题你的标题你的标题你的标题你的}} \par
+            \underline{\makebox[18em][c]{\zihao{4}\songti 标题}} \par
+            {\zihao{4}  姓\;\;\;\;\;\;\;名：}
+            \underline{\makebox[11.5em][c]{\zihao{4}\songti\thesisAuthor}} \par
+            {\zihao{4}  院\;\;\;\;\;\;\;系：}   
+            \underline{\makebox[11.5em][c]{\zihao{4}\songti\department}} \par
+            {\zihao{4}  专\;\;\;\;\;\;\;业：}
+            \underline{\makebox[11.5em][c]{\zihao{4}\songti\major}} \par
+            {\zihao{4}  年\;\;\;\;\;\;\;级：}   
+            \underline{\makebox[11.5em][c]{\zihao{4}\songti\grade}} \par
+            {\zihao{4}  学\;\;\;\;\;\;\;号：}
+            \underline{\makebox[11.5em][c]{\zihao{4}\songti\studentId}} \par
+            {\zihao{4}  指导老师：}   
+            \underline{\makebox[11.5em][c]{\zihao{4}\songti\supervisor}} \par
+            {\zihao{4}  评定成绩：}   
+            \underline{\makebox[11.5em][c]{\zihao{4}\songti\thesisScore}} \par
+        \end{center}
+    }
+    % 日期始终居中显示在页面底部
+    {\vfill
+    \centering
+        \zihao{-3}
+        \makebox[5cm][c]{\songti \thesisDate}
+        % \makebox[5cm][c]{\songti \today}  % 将上面一句注释掉，使用这句可以直接显示当前日期
+        \vspace*{\fill}
+        
+    }
+}

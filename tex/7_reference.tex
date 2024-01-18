@@ -1,0 +1,11 @@
+% -*- coding=utf-8 -*-
+%%%%% 实在是没办法对\printbibliography显示的“参考文献”标题居中显示，只能强制显示并手动将参考文献添加到目录中了
+\addcontentsline{toc}{section}{参考文献}  % 将参考文献添加到目录中
+\printbibliography[title={
+\begin{center}
+\heiti{\zihao{-3}参考文献}
+\end{center}
+}]
+% \printbibliography[title={参考文献},heading=bibintoc]
+% \printbibliography[title={\hspace{190pt} References}]
+\addtocontents{toc}{\vspace{\baselineskip}}  % 向目录添加一行空白
