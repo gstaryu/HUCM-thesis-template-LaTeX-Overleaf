@@ -115,6 +115,8 @@ amsmath还提供了一个proof(证明)的环境。
 \section{表格}
 学术论文的表格一般采用三线表格式，这里提供两个模板，一个是简单的模板，另一个个支持表格跨页。
 
+{
+\songti\zihao{5}  % 五号宋体,没找到合适的全局设置
 \begin{table}[htbp]
   \centering
   \caption{普通表格}
@@ -135,6 +137,10 @@ amsmath还提供了一个proof(证明)的环境。
         \bottomrule
     \end{tabularx}
 \end{table}
+}
+
+{
+\songti\zihao{5}
 \begin{longtable}{%
     >{\centering\arraybackslash}m{0.2\textwidth} % 25% of text width for the first column
     >{\centering\arraybackslash}m{0.2\textwidth} % 25% of text width for the second column
@@ -194,6 +200,7 @@ amsmath还提供了一个proof(证明)的环境。
   内容 & 内容 & 内容 & 内容 \\
   内容 & 内容 & 内容 & 内容 \\
 \end{longtable}
+}
 
 \section{插入图片}
 
